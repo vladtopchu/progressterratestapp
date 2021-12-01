@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_default">
+        <item name="fontFamily">@font/open_sans_regular</item>
+    </style>
+
+    <style name="text_current_bonuses" parent="text_default">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="text_burning_bonuses" parent="text_default">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor"></item>
+    </style>
+</resources>
