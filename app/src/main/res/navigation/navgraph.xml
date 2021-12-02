@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/bonusesInfoFragment">
+
+    <fragment
+        android:id="@+id/bonusesInfoFragment"
+        android:name="ru.topchu.progressterra.presentation.bonusesinfo.BonusesInfoFragment"
+        android:label="BonusesInfoFragment" />
+
+</navigation>

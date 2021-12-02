@@ -8,7 +8,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import ru.topchu.bonusesinfoview.utils.Extensions.formatDate
 
-class BonusesInfoView constructor(context: Context, attributeSet: AttributeSet): CardView(context, attributeSet) {
+class BonusesInfoView constructor(
+    context: Context,
+    attributeSet: AttributeSet
+): CardView(context, attributeSet) {
 
     init {
         inflate(context, R.layout.compound_view_bonuses_info, this)

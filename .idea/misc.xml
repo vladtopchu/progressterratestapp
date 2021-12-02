@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/dev/ProgressTerra/app/src/main/res/drawable/background_gradient.xml" value="0.533203125" />
         <entry key="..\:/dev/ProgressTerra/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/dev/ProgressTerra/app/src/main/res/layout/fragment_bonuses.xml" value="0.25" />
+        <entry key="..\:/dev/ProgressTerra/app/src/main/res/layout/fragment_user_info.xml" value="0.22644927536231885" />
         <entry key="..\:/dev/ProgressTerra/bonusesinfoview/src/main/res/font/open_sans_regular.xml" value="0.22447916666666667" />
-        <entry key="..\:/dev/ProgressTerra/bonusesinfoview/src/main/res/layout/compound_view_bonuses_info.xml" value="0.25" />
+        <entry key="..\:/dev/ProgressTerra/bonusesinfoview/src/main/res/layout/compound_view_bonuses_info.xml" value="0.5933250927070457" />
       </map>
     </option>
   </component>
