@@ -39,8 +39,7 @@ class BonusesInfoFragment : Fragment() {
                 } else if(viewState.response != null) {
                     binding.bonusesInfoView.apply {
                         viewState.response.data!!.apply {
-                            currentBonuses = currentQuantity.toInt()
-                            setBurningText(dateBurning, forBurningQuantity.toInt())
+                            setData(currentQuantity.toInt(), dateBurning, forBurningQuantity.toInt())
                         }
                     }
                 }

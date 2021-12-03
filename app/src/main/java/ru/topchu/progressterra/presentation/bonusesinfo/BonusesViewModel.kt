@@ -29,11 +29,6 @@ class BonusesViewModel @Inject constructor(
     private val _state = MutableLiveData(ViewState<AvaliableBonusesInfo>())
     val state = _state.asLiveData()
 
-    private val _accessToken: MutableLiveData<ResultAuth> = MutableLiveData(null)
-
-    private val _bonusesInfo: MutableLiveData<AvaliableBonusesInfo> = MutableLiveData(null)
-    val bonusesInfo = _bonusesInfo.asLiveData()
-
     private var job: Job? = null
 
     init {
@@ -53,8 +48,7 @@ class BonusesViewModel @Inject constructor(
             repository.getUsersAccessToken(clientParams).onEach { result ->
                 when(result) {
                     is Resource.Success -> {
-                        _accessToken.postValue(result.data!!)
-                        getBonusesInfo(result.data.accessToken!!)
+                        getBonusesInfo(result.data?.accessToken!!)
                     }
                     is Resource.Loading -> {
                         _state.postValue(state.value?.copy(
@@ -73,7 +67,7 @@ class BonusesViewModel @Inject constructor(
         }
     }
 
-    fun getBonusesInfo(accessToken: String){
+    private fun getBonusesInfo(accessToken: String){
         job?.cancel()
         job = viewModelScope.launch {
             repository.getBonusesInfo(accessToken).onEach { result ->
