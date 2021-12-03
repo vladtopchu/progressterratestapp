@@ -5,12 +5,14 @@
     </style>
 
     <style name="text_current_bonuses" parent="text_default">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="text_burning_bonuses" parent="text_default">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor"></item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/gray</item>
     </style>
+
 </resources>

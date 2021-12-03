@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProgressTerra</string>
+    <string name="logo">ЛОГОТИП</string>
+    <string name="icon_description">Icon</string>
 </resources>

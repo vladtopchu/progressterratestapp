@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_padding_horizontal">20dp</dimen>
+    <dimen name="header_padding_top">20dp</dimen>
+    <dimen name="header_padding_bottom">60dp</dimen>
+
+    <dimen name="card_margin">20dp</dimen>
+    <dimen name="card_elevation">15dp</dimen>
+    <dimen name="card_corners_radius">15dp</dimen>
+</resources>

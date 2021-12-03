@@ -1,6 +1,6 @@
 package ru.topchu.iprobonusapi.dto
 
-data class AvaliableBonusesData(
+data class AvailableBonusesData(
     val typeBonusName: String? = null,
     val currentQuantity: Double,
     val forBurningQuantity: Double,

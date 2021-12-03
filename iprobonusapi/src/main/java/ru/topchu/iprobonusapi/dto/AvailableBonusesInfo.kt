@@ -1,6 +1,6 @@
 package ru.topchu.iprobonusapi.dto
 
-data class AvaliableBonusesInfo(
+data class AvailableBonusesInfo(
     val resultOperation: ResultOperation,
-    val data: AvaliableBonusesData? = null
+    val data: AvailableBonusesData? = null
 )

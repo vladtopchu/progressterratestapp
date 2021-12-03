@@ -4,7 +4,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
-import ru.topchu.iprobonusapi.dto.AvaliableBonusesInfo
+import ru.topchu.iprobonusapi.dto.AvailableBonusesInfo
 import ru.topchu.iprobonusapi.dto.ClientParamsWithGeo
 import ru.topchu.iprobonusapi.dto.ResultAuth
 import ru.topchu.iprobonusapi.utils.HeaderInterceptor
@@ -15,7 +15,7 @@ interface IpbApi {
     suspend fun getUsersAccessToken(@Body clientParams: ClientParamsWithGeo): ResultAuth
 
     @GET("ibonus/generalinfo/{accessToken}")
-    suspend fun getBonusesInfo(@Path("accessToken") accessToken: String): AvaliableBonusesInfo
+    suspend fun getBonusesInfo(@Path("accessToken") accessToken: String): AvailableBonusesInfo
 
     data class Builder(private var _accessKey: String? = null) {
         fun setAccessKey(accessKey: String) = apply { this._accessKey = accessKey }

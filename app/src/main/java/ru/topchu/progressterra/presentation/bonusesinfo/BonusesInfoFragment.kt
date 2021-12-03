@@ -40,6 +40,13 @@ class BonusesInfoFragment : Fragment() {
                     binding.bonusesInfoView.apply {
                         viewState.response.data!!.apply {
                             setData(currentQuantity.toInt(), dateBurning, forBurningQuantity.toInt())
+                            setActionButtonClickListener {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Action Button Test",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
                         }
                     }
                 }

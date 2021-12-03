@@ -8,12 +8,10 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import ru.topchu.iprobonusapi.IpbApi
-import ru.topchu.iprobonusapi.dto.AvaliableBonusesInfo
+import ru.topchu.iprobonusapi.dto.AvailableBonusesInfo
 import ru.topchu.iprobonusapi.dto.ClientParamsWithGeo
-import ru.topchu.iprobonusapi.dto.ResultAuth
-import ru.topchu.progressterra.domain.repository.IpbRepository
-import ru.topchu.progressterra.utils.Constants.API_KEY
+import ru.topchu.progressterra.domain.use_case.GetAccessTokenUseCase
+import ru.topchu.progressterra.domain.use_case.GetBonusesInfoUseCase
 import ru.topchu.progressterra.utils.Constants.CLIENT_ID
 import ru.topchu.progressterra.utils.Constants.DEVICE_ID
 import ru.topchu.progressterra.utils.Resource
@@ -23,10 +21,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BonusesViewModel @Inject constructor(
-    private val repository: IpbRepository
+    private val getAccessTokenUseCase: GetAccessTokenUseCase,
+    private val getBonusesInfoUseCase: GetBonusesInfoUseCase
 ) : ViewModel() {
 
-    private val _state = MutableLiveData(ViewState<AvaliableBonusesInfo>())
+    private val _state = MutableLiveData(ViewState<AvailableBonusesInfo>())
     val state = _state.asLiveData()
 
     private var job: Job? = null
@@ -45,7 +44,7 @@ class BonusesViewModel @Inject constructor(
                 0
             )
 
-            repository.getUsersAccessToken(clientParams).onEach { result ->
+            getAccessTokenUseCase(clientParams).onEach { result ->
                 when(result) {
                     is Resource.Success -> {
                         getBonusesInfo(result.data?.accessToken!!)
@@ -70,7 +69,7 @@ class BonusesViewModel @Inject constructor(
     private fun getBonusesInfo(accessToken: String){
         job?.cancel()
         job = viewModelScope.launch {
-            repository.getBonusesInfo(accessToken).onEach { result ->
+            getBonusesInfoUseCase(accessToken).onEach { result ->
                 when(result) {
                     is Resource.Success -> {
                         _state.postValue(state.value?.copy(
