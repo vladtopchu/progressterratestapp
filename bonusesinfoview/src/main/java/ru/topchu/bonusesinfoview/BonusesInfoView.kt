@@ -53,5 +53,4 @@ class BonusesInfoView constructor(
     fun setActionButtonClickListener(listener: OnClickListener) {
         this.findViewById<ImageView>(R.id.button_action).setOnClickListener(listener)
     }
-
 }

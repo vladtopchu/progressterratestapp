@@ -1,0 +1,40 @@
+ext {
+    libs = [
+        core: [
+           core: 'androidx.core:core-ktx:1.7.0',
+           appcompat: 'androidx.appcompat:appcompat:1.4.0',
+           material: 'com.google.android.material:material:1.4.0'
+        ],
+        hilt: [
+            core: 'com.google.dagger:hilt-android:2.38.1',
+            viewmodel: 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03',
+            navigation: 'androidx.hilt:hilt-navigation:1.0.0'
+        ],
+        retrofit: [
+            core: 'com.squareup.retrofit2:retrofit:2.9.0',
+            gsonconverter: 'com.squareup.retrofit2:converter-gson:2.9.0',
+        ],
+        okhttp: [
+            core: 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2',
+            logging: 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+        ],
+        coroutines: [
+            core: 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2',
+            android: 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+        ],
+        viewmodel: [
+            core: 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0',
+            savedstate: 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0',
+            livedata: 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+
+        ],
+        navigation: [
+            core: 'androidx.navigation:navigation-fragment-ktx:2.3.5',
+            ui: 'androidx.navigation:navigation-ui-ktx:2.3.5'
+        ],
+        timber: 'com.jakewharton.timber:timber:5.0.1',
+        shimmer: 'com.facebook.shimmer:shimmer:0.5.0'
+
+    ]
+
+}
